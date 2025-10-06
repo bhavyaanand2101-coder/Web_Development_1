@@ -1,0 +1,214 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Using 'rem' for root-relative sizing for better scalability */
+}
+
+
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline; /* Displaying nav items horizontally */
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+/* Main Content Area */
+main {
+    padding: 20px;
+    max-width: 960px;
+    margin: 20px auto; /* Centers the main content block */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+#about {
+    text-align: center;
+}
+
+#about img {
+    border-radius: 50%; /* Makes the image circular */
+    max-width: 180px;
+    height: 180px;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    margin-top: 1rem;
+    border: 4px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+#projects ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#projects li {
+    margin-bottom: 10px;
+}
+
+
+#skills table {
+    width: 80%;
+    margin: 20px auto; /* Centers the table horizontally */
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#skills th, #skills td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#skills th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+#skills tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+#skills tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+#contact form {
+    display: grid; /* Uses CSS Grid for form layout */
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto; /* Centers the form horizontally */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+}
+
+#contact label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+#contact textarea {
+    resize: vertical; 
+}
+
+#contact button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* Marquee Style */
+marquee {
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 8px 0;
+    font-weight: bold;
+    border-bottom: 2px solid #fbc02d;
+}
+
+
+
+@media (max-width: 768px) { 
+    nav ul li {
+        margin-right: 10px;
+    }
+
+    #skills table {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) { 
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block; 
+        margin-bottom: 10px;
+    }
+    nav ul {
+        text-align: center;
+    }
+}
