@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Correct viewport meta tag -->
+    <title>Bhavya Anand - Personal Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Global Resets */
+        :root {
+            /* Define colors as CSS variables for easy theme changes */
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #28a745;
+            --dark-bg: #212529;
+            --light-bg: #f8f9fa;
+            --text-color: #343a40;
+            --white-color: #ffffff;
+            --border-color: #dee2e6;
+            --hover-blue: #0056b3;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            font-size: 100%; /* Base font size, 1rem = 16px */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem; /* Responsive padding */
+        }
+
+        /* Header Styles with Flexbox */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--white-color);
+            padding: 1rem 0;
+            display: flex; /* Flexbox container */
+            flex-direction: column; /* Stack items vertically by default */
+            align-items: center; /* Center items horizontally */
+            text-align: center;
+        }
+
+        header .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem; /* Space between logo and nav on mobile */
+        }
+
+        /* Navigation Bar Styles with Flexbox */
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex; /* Flexbox for navigation links */
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+            justify-content: center; /* Center navigation items */
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 0 0.8rem; /* Space between navigation links using rem */
+        }
+
+        nav a {
+            color: var(--white-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+            display: block; /* Make link a block for better padding/hover area */
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px); /* Subtle lift on hover */
+        }
+
+        /* Hero Section (About Me) with Flexbox and Animation */
+        #about {
+            display: flex; /* Flexbox for image and text */
+            flex-direction: column; /* Stack on mobile */
+            align-items: center; /* Center items */
+            text-align: center;
+            padding: 4rem 1.5rem; /* Ample padding for hero section */
+            background-color: var(--dark-bg);
+            color: var(--white-color);
+        }
+
+        #about .about-content {
+            display: flex;
+            flex-direction: column; /* Stack for mobile */
+            align-items: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        #about .about-text {
+            flex: 1; /* Allows text to grow */
+            margin-top: 2rem; /* Space between image and text on stacked layout */
+        }
+
+        #about h2 {
+            color: var(--white-color); /* White heading for hero */
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem; /* Larger heading */
+            margin-bottom: 1rem;
+        }
+        
+        #about h2 span {
+            color: var(--primary-color);
+            /* Keyframe Animation for the 'Full Stack Developer' text */
+            animation: colorChange 4s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% { color: var(--primary-color); }
+            50% { color: var(--accent-color); }
+            100% { color: var(--primary-color); }
+        }
+
+        #about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 1rem auto;
+            color: var(--light-bg);
+        }
+
+        #about img {
+            border-radius: 50%;
+            max-width: 12rem; /* Use rem for image size */
+            height: 12rem; /* Fixed height for consistency */
+            object-fit: cover;
+            border: 0.4rem solid var(--primary-color); /* Use rem for border */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4); /* Use rem for shadow */
+            margin-bottom: 1.5rem; /* Space below image */
+        }
+
+        /* General Section Styles */
+        section {
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background-color: var(--white-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+        }
+
+        /* Skills Section with CSS Grid */
+        #skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 1.5rem; /* Space between grid items */
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            background-color: var(--dark-bg);
+            color: var(--white-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 10rem; /* Ensure cards have a minimum height */
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0,123,255,0.2) 0%, rgba(40,167,69,0.2) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-0.5rem) scale(1.02);
+            box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
+            background-color: var(--dark-bg); /* Keep dark background on hover */
+        }
+
+        .skill-card h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--white-color); /* Ensure heading is white */
+            z-index: 2; /* Bring text above overlay */
+            position: relative;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--light-bg); /* Lighter text for level */
+            z-index: 2;
+            position: relative;
+        }
+
+        .skill-card .icon {
+            font-size: 3rem; /* Icon size */
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            z-index: 2;
+            position: relative;
+        }
+
+
+        /* Projects Section with CSS Grid */
+        #projects .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .project-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.15);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+            font-size: 1.4rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* Contact Form Styles */
+        #contact form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem; /* Using rem for gap */
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem; /* Using rem for padding */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--light-bg);
+            box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+        }
+
+        #contact label {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #contact textarea {
+            resize: vertical;
+            min-height: 8rem; /* Use rem for min-height */
+        }
+
+        #contact button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 0.9rem 1.5rem; /* Using rem for padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: var(--hover-blue);
+            transform: translateY(-3px); /* Subtle lift on hover */
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--dark-bg);
+            color: var(--white-color);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+
+        /* Marquee Style */
+        .marquee-wrapper {
+            background-color: #ffeb3b; /* Yellow background */
+            color: var(--text-color);
+            padding: 0.5rem 0; /* Vertical padding */
+            font-weight: bold;
+            border-bottom: 2px solid #fbc02d; /* Darker yellow border */
+            overflow: hidden; /* Hide overflow from actual marquee */
+        }
+
+        .marquee-wrapper marquee {
+            /* Basic styling for the marquee content */
+            padding: 0;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design: Media queries */
+
+        /* Tablet and larger (min-width: 768px) */
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row; /* Header items side-by-side */
+                justify-content: space-between; /* Space out logo and nav */
+                padding: 1rem 1.5rem; /* Add horizontal padding */
+            }
+
+            header .logo {
+                margin-bottom: 0; /* Remove bottom margin */
+            }
+
+            #about .about-content {
+                flex-direction: row; /* Hero content side-by-side */
+                text-align: left;
+                align-items: flex-start; /* Align items to the start of the cross axis */
+            }
+
+            #about img {
+                margin-right: 3rem; /* Space between image and text */
+                margin-bottom: 0;
+            }
+
+            #about .about-text {
+                margin-top: 0;
+            }
+            
+            nav ul {
+                flex-wrap: nowrap; /* Prevent nav links from wrapping */
+            }
+        }
+
+        /* Desktop and larger (min-width: 1024px) */
+        @media (min-width: 1024px) {
+            header .logo {
+                font-size: 2.5rem; /* Larger logo on desktop */
+            }
+
+            nav ul li {
+                margin: 0 1.2rem; /* More space between links */
+            }
+
+            nav a {
+                font-size: 1.2rem;
+            }
+
+            #about h2 {
+                font-size: 3.5rem; /* Larger hero heading */
+            }
+
+            #about p {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Very Small Screens (max-width: 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem 0.5rem; /* Smaller padding */
+            }
+
+            header .logo {
+                font-size: 1.8rem;
+            }
+
+            nav ul li {
+                margin: 0 0.5rem; /* Tighter nav links */
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            #about {
+                padding: 3rem 1rem;
+            }
+
+            #about h2 {
+                font-size: 2rem;
+            }
+
+            #about p {
+                font-size: 1rem;
+            }
+
+            .skill-card, .project-card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Marquee: A scrolling text banner at the top of the page. -->
+    <div class="marquee-wrapper">
+        <marquee behavior="scroll" direction="left">This is my first website and a learning project!</marquee>
+    </div>
+
+    <!-- Header Section: Contains the main title and navigation menu. -->
+    <header>
+        <div class="logo">Bhavya Anand</div>
+        <!-- Navigation Bar: Links to different sections of the portfolio. -->
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area: Holds all the primary content sections of the portfolio. -->
+    <main id="main-content">
+        <!-- About Me Section: Provides information about the portfolio owner. This now acts as the Hero section. -->
+        <section id="about" class="container">
+            <div class="about-content">
+                <!-- Profile image: Make sure you have an 'images' folder with 'profile.jpg' -->
+                <!-- IMPORTANT: Replace 'images/Photo.jpeg' with the correct relative path to your image. -->
+                <img src="/Users/bhavya/Desktop/ /Books Sem-1/WEB_DEV_1- 1BY1/HTML/Photo.jpeg" alt="Bhavya Anand Profile Picture">
+                <div class="about-text">
+                    <h2>Hi, I am <br><span>Full Stack Developer</span></h2>
+                    <p>I am passionate about learning web development and building creative projects. My journey into web development began with a fascination for how websites are built and interact with users. I've been honing my skills in front-end technologies such as HTML, CSS, JavaScript, and am eager to apply my knowledge to real-world applications and contribute to innovative projects. I believe in continuous learning and always strive to improve my craft.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section: Displays a grid of technical skills. -->
+        <section id="skills" class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <!-- Each skill is now a card -->
+                <div class="skill-card">
+                    <span class="icon">💻</span> <!-- Placeholder icon -->
+                    <h3>HTML5</h3>
+                    <p>Beginner</p>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">🎨</span>
+                    <h3>CSS</h3>
+                    <p>Beginner</p>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">🚀</span>
+                    <h3>JavaScript</h3>
+                    <p>Learning</p>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">✨</span>
+                    <h3>Git/GitHub</h3>
+                    <p>Beginner</p>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">💡</span>
+                    <h3>VS Code</h3>
+                    <p>Proficient</p>
+                </div>
+                <div class="skill-card">
+                    <span class="icon">🐍</span>
+                    <h3>Python</h3>
+                    <p>Learning</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Projects Section: Lists various projects in a grid. -->
+        <section id="projects" class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <!-- Each project is now a card -->
+                <div class="project-card">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal one-page website designed to showcase my bio, technical skills, and contact details. Built with semantic HTML for structure and accessibility, enhanced with modern CSS techniques.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Medium Clone</h3>
+                    <p>A front-end project creating a static blog layout that mimics the clean design of Medium, developed using only HTML and CSS to demonstrate layout and styling principles.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Interactive Birthday Card</h3>
+                    <p>A creative web-based greeting card, implemented with HTML for content structure and CSS for engaging visual styling and animations.</p>
+                </div>
+                <div class="project-card">
+                    <h3>User Registration Form</h3>
+                    <p>A dedicated web page featuring various form input types, including name, email, and message fields, with robust client-side validation and accessibility features for enhanced user experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Me Section: Contains a form for visitors to send messages. -->
+        <section id="contact" class="container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="7" placeholder="Type your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section: Contains copyright information and other legal text. -->
+    <footer>
+        <p>&copy; 2025-2029 Bhavya Anand. All rights reserved.</p>
+        <!-- Add social media links here if desired -->
+    </footer>
+</body>
+</html>
