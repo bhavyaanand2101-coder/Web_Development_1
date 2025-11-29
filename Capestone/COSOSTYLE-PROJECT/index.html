@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cosostyle - Premium Men's T-Shirts. Available on Amazon and Flipkart.">
+    <title>Cosostyle | Premium Urbanwear</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- FontAwesome for Icons (Optional, makes icons look better) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <header>
+        <a href="#" class="brand-logo">COSOSTYLE<span style="color:var(--ui-red)">.</span></a>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search for T-shirts, Polos...">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+        </div>
+
+        <div class="header-icons">
+            <div class="icon-circle"><i class="fas fa-shopping-cart"></i></div>
+            <div class="icon-circle"><i class="fas fa-user"></i></div>
+            <a href="https://www.amazon.in/stores/COSOSTYLE/page/AC76D90C-5026-47E0-8165-805C4893CAFC" target="_blank" class="login-btn">Amazon Store</a>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tagline">NEW ARRIVALS</span>
+            <h1>The Alpha Series<br>Collection</h1>
+            <p>Experience the perfect blend of comfort and street aesthetics. Designed for the everyday hustle.</p>
+            <a href="#collection" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- 3. Flash Sale Bar -->
+    <div class="flash-bar">
+        <span>⚡ Flash Sale: Extra 20% OFF! Ends in</span>
+        <div class="timer">
+            <span class="timer-box">02</span> : 
+            <span class="timer-box">15</span> : 
+            <span class="timer-box">42</span>
+        </div>
+    </div>
+
+    <!-- 4. Main Layout -->
+    <div class="main-layout" id="collection">
+        
+        <!-- Left Sidebar (Filters) -->
+        <aside>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Filters</div>
+                <div class="filter-group">
+                    <p class="filter-header">Category</p>
+                    <ul class="filter-list">
+                        <li><input type="checkbox" checked> Round Neck Tees</li>
+                        <li><input type="checkbox"> Polo T-Shirts</li>
+                        <li><input type="checkbox"> Oversized</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="filter-group">
+                    <p class="filter-header">Price</p>
+                    <ul class="filter-list">
+                        <li><input type="checkbox"> Under ₹500</li>
+                        <li><input type="checkbox" checked> ₹500 - ₹1000</li>
+                        <li><input type="checkbox"> ₹1000+</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="filter-group">
+                    <p class="filter-header">Color</p>
+                    <ul class="filter-list">
+                        <li><input type="checkbox" checked> Black</li>
+                        <li><input type="checkbox"> White</li>
+                        <li><input type="checkbox"> Navy Blue</li>
+                        <li><input type="checkbox"> Olive</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <main class="content-area">
+            
+            <!-- Category Bubbles -->
+            <div class="category-circles">
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=150&q=80" class="cat-img" alt="Men">
+                    <div class="cat-text">Men's Tees</div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff?w=150&q=80" class="cat-img" alt="Polo">
+                    <div class="cat-text">Polos</div>
+                </div>
+                <div class="cat-card">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=150&q=80" class="cat-img" alt="Best Sellers">
+                    <div class="cat-text">Best Sellers</div>
+                </div>
+            </div>
+
+            <div class="results-bar">
+                <p>Showing <strong>6</strong> products from Cosostyle Amazon Store</p>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div class="product-grid">
+
+                <!-- Product 1: Black Round Neck -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <!-- Shows your local file 'Black.jpg' if available, otherwise shows online image -->
+                        <img src="Black.jpg" onerror="this.src='https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600&q=80'" alt="Alpha Black">
+                        <span class="badge">Best Seller</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Cosostyle Alpha Black</h3>
+                        <p class="p-desc">Premium Round Neck Cotton</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹499</span> <span class="mrp">₹1299</span></div>
+                            <a href="https://www.amazon.in/dp/B0F8B6D955" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2: White Round Neck -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="White.jpg" onerror="this.src='https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80'" alt="Alpha White">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Cosostyle Pure White</h3>
+                        <p class="p-desc">Soft Touch Solid Tee</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹499</span> <span class="mrp">₹1299</span></div>
+                            <a href="https://www.amazon.in/dp/B0F8B6H8BY" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3: Black Polo -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="BlackPolo.jpg" onerror="this.src='https://images.unsplash.com/photo-1626557981101-aae6f84aa6ff?w=600&q=80'" alt="Classic Polo">
+                        <span class="badge new">New</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Cosostyle Classic Polo</h3>
+                        <p class="p-desc">Matte Black | Collar Series</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹599</span> <span class="mrp">₹1499</span></div>
+                            <a href="https://www.amazon.in/stores/COSOSTYLE/page/AC76D90C-5026-47E0-8165-805C4893CAFC?lp_asin=B0F8B68JTW" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4: Navy Blue Tee -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="Navy.jpg" onerror="this.src='https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80'" alt="Navy Blue">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Urban Navy Tee</h3>
+                        <p class="p-desc">Street Series Collection</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹499</span> <span class="mrp">₹1299</span></div>
+                            <a href="https://www.amazon.in/stores/COSOSTYLE/page/AC76D90C-5026-47E0-8165-805C4893CAFC" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5: Olive Green -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="Olive.jpg" onerror="this.src='https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=600&q=80'" alt="Olive Green">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Military Olive Green</h3>
+                        <p class="p-desc">Outdoor Comfort Fit</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹499</span> <span class="mrp">₹1299</span></div>
+                            <a href="https://www.amazon.in/stores/COSOSTYLE/page/AC76D90C-5026-47E0-8165-805C4893CAFC" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 6: Grey Melange -->
+                <article class="product-card">
+                    <div class="card-img">
+                        <img src="Pink P.jpg" onerror="this.src='https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=600&q=80'" alt="Pink Polo">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="p-title">Pink POlo T-shirt</h3>
+                        <p class="p-desc">Casual Everyday Wear</p>
+                        <div class="p-price-row">
+                            <div><span class="price">₹499</span> <span class="mrp">₹1299</span></div>
+                            <a href="https://www.amazon.in/Cosostyle-Pink-Polo-T-Shirt-Alpha/dp/B0F89KLWDX?ref_=ast_sto_dp&th=1&psc=1" target="_blank" class="buy-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Cosostyle. All rights reserved.</p>
+            <p>Official Store Available on <a href="https://www.amazon.in/stores/COSOSTYLE/page/AC76D90C-5026-47E0-8165-805C4893CAFC">Amazon India</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
